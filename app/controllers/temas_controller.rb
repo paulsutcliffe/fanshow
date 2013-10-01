@@ -1,4 +1,5 @@
 class TemasController < InheritedResources::Base
+  before_filter :authenticate_fan!
 
   def index
     @temas = Tema.all

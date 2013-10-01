@@ -1,3 +1,10 @@
-- @temas.each do |tema|
-  = tema.nombre
-  %br
+- @temas.each_slice(25) do |row|
+  .span3
+    %table.table.table-hover
+      - row.each do |tema|
+        %tr
+          %td
+            %i.icon-music
+          %td
+            %span.badge= tema.votos
+          %td= tema.nombre

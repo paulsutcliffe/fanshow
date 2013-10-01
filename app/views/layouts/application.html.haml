@@ -29,9 +29,9 @@
           %a.brand(href="#") Fanshow
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to "Resultados", root_path
+              %li= link_to "Votar", temas_path
+              %li= link_to "Información", '#'
 
     .container-fluid
 
@@ -39,14 +39,16 @@
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li.nav-header INFORMACIÓN
+              %li= 'Faltan solo ' + (25 - Time.now.day).to_s + ' días'
+              - if params[:controller] == 'inicio'
+                %br
+                = link_to 'Votar', temas_path, class: 'btn btn-large btn-primary'
+
         .span9
           = bootstrap_flash
           = yield
-    
+
       %footer
-        %p &copy; Company 2013
+        %p &copy; RIO Producciones 2013
     = render 'shared/google_analytics'

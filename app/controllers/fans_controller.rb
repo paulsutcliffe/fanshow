@@ -1,3 +1,4 @@
+#coding: utf-8
 class FansController < InheritedResources::Base
 
   def update
@@ -16,8 +17,11 @@ class FansController < InheritedResources::Base
       tema_ids.each do |tema_id|
         @fan.temas << Tema.find(tema_id)
       end
-      flash[:notice] = 'voto exitoso'
+      flash[:notice] = 'Gracias por tu elección, nos vemos este 25 en el Sargento Pimiento Barranco.'
     end
+
+    @fan.ya_voto = 1
+    @fan.save
     redirect_to root_path
 
   end

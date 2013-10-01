@@ -1,15 +1,15 @@
-%h1 Temas
+%h3 Selecciona las 20 canciones que quieres que RIO toque en el concierto FANSHOW
 
 = form_tag(votar_fan_path(@fan)) do
-  %table
-    %tr
-      %th
-      %th Nombre
+  - @temas.each_slice(25) do |row|
+    .span3
+      %table.table.table-hover
+        - row.each do |tema|
+          %tr
+            %td
+              %i.icon-music
+            %td= check_box_tag 'temas[]', tema.id, false, class: 'checkbox'
+            %td= tema.nombre
 
-    - for tema in @temas do
-      %tr
-        %td= check_box_tag 'temas[]', tema.id, false
-        %td= tema.nombre
-
-    %br
-  = submit_tag "Votar"
+  .span3
+    = submit_tag "Votar", class: 'btn btn-large btn-primary'
