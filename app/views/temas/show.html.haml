@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @tema.nombre
+
+= link_to 'Edit', edit_tema_path(@tema)
+\|
+= link_to 'Back', temas_path

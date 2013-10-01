@@ -1,0 +1,15 @@
+%h1 Temas
+
+= form_tag(votar_fan_path(@fan)) do
+  %table
+    %tr
+      %th
+      %th Nombre
+
+    - for tema in @temas do
+      %tr
+        %td= check_box_tag 'temas[]', tema.id, false
+        %td= tema.nombre
+
+    %br
+  = submit_tag "Votar"
