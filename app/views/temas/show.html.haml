@@ -1,9 +1,9 @@
-%p#notice= notice
+%h1= @tema.nombre
 
-%p
-  %b Nombre:
-  = @tema.nombre
+%br
+%h4 Los siguientes fans han votado por esta canción
+%ul.list-unstyled
+  - @fans.each do |fan|
+    %li= fan.name
 
-= link_to 'Edit', edit_tema_path(@tema)
-\|
-= link_to 'Back', temas_path
+= link_to 'Back', :back, class: 'btn btn-default'

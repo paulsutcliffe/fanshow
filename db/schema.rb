@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(:version => 20131001055051) do
 
   create_table "fans", :force => true do |t|
     t.boolean  "ya_voto",                :default => false
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "email",                  :default => "",    :null => false
     t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
@@ -39,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20131001055051) do
 
   create_table "temas", :force => true do |t|
     t.string   "nombre"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

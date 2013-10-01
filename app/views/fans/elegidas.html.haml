@@ -1,0 +1,9 @@
+.span3
+  %table.table.table-hover
+    - @temas.each do |tema|
+      %tr
+        %td
+          %i.icon-music
+        %td
+          %span.badge= tema.votos
+        %td= tema.nombre

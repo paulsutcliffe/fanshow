@@ -25,4 +25,9 @@ class FansController < InheritedResources::Base
     redirect_to root_path
 
   end
+
+  def elegidas
+    @fan = Fan.find(current_fan.id)
+    @temas = @fan.temas
+  end
 end

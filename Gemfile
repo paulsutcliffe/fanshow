@@ -34,6 +34,9 @@ gem "capistrano"
 # To use debugger
 # gem 'debugger'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem "rvm-capistrano"
 gem "haml"
 gem "haml-rails"

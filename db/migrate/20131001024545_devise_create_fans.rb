@@ -2,6 +2,9 @@ class DeviseCreateFans < ActiveRecord::Migration
   def change
     create_table(:fans) do |t|
       t.boolean :ya_voto, :default => 0
+      t.string :name
+      t.string :provider
+      t.string :uid
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
