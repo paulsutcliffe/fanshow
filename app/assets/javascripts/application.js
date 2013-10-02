@@ -16,7 +16,7 @@
 //= require_tree .
 
 
-checkboxes = $('[type="checkbox"]');
+checkboxes = $(':checkbox');
 checkboxes.change(function() {
   check_validate();
 });
@@ -29,17 +29,14 @@ check_validate();
 
 function check_validate() {
 
-  checkboxes = $('[type="checkbox"]');
   
-  checkboxes_checked = $('[type="checkbox"]:checked').length;
+  checkboxes_checked = $(':checkbox:checked').length;
   max_check = 20;
   
   if (checkboxes_checked == max_check) {
-    console.log(checkboxes_checked.length);
     console.log('works');
-    $('[type="checkbox"]:not(:checked)').attr('disabled', 'disabled'); 
+    $(':checkbox:not(:checked)').attr('disabled', 'disabled'); 
   } else {
-    console.log(checkboxes_checked.length);
     checkboxes.removeAttr('disabled');
   }
 }
