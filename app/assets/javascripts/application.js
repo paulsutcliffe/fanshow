@@ -15,7 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 
-
+console.log('working');
 checkboxes = $(':checkbox');
 checkboxes.change(function() {
   check_validate();
