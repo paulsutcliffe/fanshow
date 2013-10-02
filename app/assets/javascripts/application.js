@@ -32,7 +32,7 @@ function check_validate() {
   checkboxes = $('[type="checkbox"]');
   
   checkboxes_checked = $('[type="checkbox"]:checked').length;
-  max_check = 4;
+  max_check = 20;
   
   if (checkboxes_checked == max_check) {
     console.log(checkboxes_checked.length);
