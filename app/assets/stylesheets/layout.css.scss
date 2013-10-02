@@ -8,13 +8,13 @@ li, label {@extend .bebas-neue; font-size: $bebas-min; color: $yellow}
 
 body h2 {font-size: $bebas-title}
 p {color: white}
-a {color: $yellow; @extend .bebas-neue; font-size: $bebas-min;
+a, td {color: $yellow; @extend .bebas-neue; font-size: $bebas-min;
   &:hover, &:focus {color: white; text-decoration: none}
 }
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {color: white}
 
-.badge {background: $yellow; color: $black}
+.badge {background: $yellow; color: $black; font-family: arial}
 
 .navbar,
 .navbar-inner {background: $gray-light; border: 0}

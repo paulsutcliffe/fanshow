@@ -1,17 +1,18 @@
-%h2 Regístrate para poder votar
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :name, "Nombre y Apellido"
-    = f.text_field :name, :autofocus => true
-  .field
-    = f.label :email
-    = f.email_field :email
-  .field
-    = f.label :password, "Contraseña"
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation, "Confirmar Contraseña"
-    = f.password_field :password_confirmation
-  %div= f.submit "Registrarse", class: 'btn btn-primary'
+.span6
+  %h2 Regístrate para poder votar
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :name, "Nombre y Apellido"
+      = f.text_field :name, :autofocus => true
+    .field
+      = f.label :email
+      = f.email_field :email
+    .field
+      = f.label :password, "Contraseña"
+      = f.password_field :password
+    .field
+      = f.label :password_confirmation, "Confirmar Contraseña"
+      = f.password_field :password_confirmation
+    %div= f.submit "Registrarse", class: 'btn btn-primary'
 

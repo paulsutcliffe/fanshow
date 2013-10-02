@@ -1,20 +1,21 @@
-%h2 Ingresar
-
-.fake-form
-  .fields.omni
-    .field
-      = link_to '', fan_omniauth_authorize_path(:facebook), class: 'face-log'
-
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  .fields
-    .field
-      = f.label :email
-      = f.email_field :email, :autofocus => true
-    .field
-      = f.label :password, "Contraseña"
-      = f.password_field :password
-    %div= f.submit "Ingresar", class: 'btn btn-primary'
-%p ¿Es la primera vez que votas? Entonces regístrate con solo tu email.
-- if devise_mapping.registerable? && controller_name != 'registrations'
-  = link_to "Registrarse", new_registration_path(resource_name), :class => 'btn btn-primary alt'
-  %br/
+.span6
+  %h2 Ingresar
+  
+  .fake-form
+    .fields.omni
+      .field
+        = link_to '', fan_omniauth_authorize_path(:facebook), class: 'face-log'
+  
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .fields
+      .field
+        = f.label :email
+        = f.email_field :email, :autofocus => true
+      .field
+        = f.label :password, "Contraseña"
+        = f.password_field :password
+      %div= f.submit "Ingresar", class: 'btn btn-primary'
+  %p ¿Es la primera vez que votas? Entonces regístrate con solo tu email.
+  - if devise_mapping.registerable? && controller_name != 'registrations'
+    = link_to "Registrarse", new_registration_path(resource_name), :class => 'btn btn-primary alt'
+    %br/
