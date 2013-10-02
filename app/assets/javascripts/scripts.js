@@ -1,14 +1,11 @@
-console.log('working');
-checkboxes = $(':checkbox');
-checkboxes.change(function() {
-  check_validate();
-});
+
 
 // $(document).ready(function() {
 // check_validate();
 // 
 // });
 
+console.log('working');
 
 function check_validate() {
 
@@ -23,3 +20,9 @@ function check_validate() {
     checkboxes.removeAttr('disabled');
   }
 }
+
+console.log('working 2');
+checkboxes = $(':checkbox');
+checkboxes.change(function() {
+  check_validate();
+});
