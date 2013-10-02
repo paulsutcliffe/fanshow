@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+checkboxes = $('[type="checkbox"]');
+checkboxes.change(function() {
+  check_validate();
+});
+
+function check_validate() {
+
+
+  checkboxes_checked = $('[type="checkbox"]:checked');
+  max_check = 20;
+  
+  if (checkboxes_checked == max_check) {
+    checkboxes.attr('disabled', 'disabled'); 
+  } else {
+    checkboxes.removeAttr('disabled');
+  }
+}
