@@ -11,4 +11,18 @@ class Fans::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to temas_path
     end
   end
+
+  private
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    fan = Fan.where(:provider => auth.provider, :uid => auth.uid).first
+    unless fan
+      fan = Fan.create(name:auth.extra.raw_info.name,
+                           provider:auth.provider,
+                           uid:auth.uid,
+                           email:auth.info.email,
+                           password:Devise.friendly_token[0,20])
+    end
+    fan
+  end
 end
