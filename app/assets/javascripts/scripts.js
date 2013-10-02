@@ -7,6 +7,8 @@
 
 console.log('working');
 
+$(document).ready(function() {
+
 function check_validate() {
 
   console.log('funct works');  
@@ -24,6 +26,9 @@ function check_validate() {
 console.log('working 2');
 checkboxes = $(':checkbox');
 checkboxes.change(function() {
+  console.log('click a');
   check_validate();
-  console.log('click');
+  console.log('click b');
+});
+
 });
