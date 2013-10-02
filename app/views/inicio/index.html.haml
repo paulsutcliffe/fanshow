@@ -1,10 +1,15 @@
-- @temas.each_slice(25) do |row|
-  .span6
-    %table.table.table-hover
-      - row.each do |tema|
-        %tr
-          %td
-            %i.icon-music
-          %td
-            %span.badge= tema.votos
-          %td= link_to tema.nombre, tema
+.span6
+  - @temas.each_slice(25) do |row|
+    .span6
+      %table.table.table-hover
+        - row.each do |tema|
+          %tr
+            %td
+              %i.icon-music
+            %td
+              %span.badge= tema.votos
+            %td= link_to tema.nombre, tema
+
+.span3
+  = link_to 'Votar', temas_path, class: 'btn btn-large btn-primary btn-extra-large'
+

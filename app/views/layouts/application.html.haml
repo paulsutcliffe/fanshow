@@ -50,11 +50,9 @@
                     - if params[:controller] == 'inicio'
                 
 
-        .span6
-          = yield
+        = yield
    
-        .span3
-          = link_to 'Votar', temas_path, class: 'btn btn-large btn-primary btn-extra-large'
+        
 
       %footer
         %p &copy; RIO Producciones 2013
