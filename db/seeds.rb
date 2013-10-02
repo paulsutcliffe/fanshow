@@ -1,14 +1,4 @@
 # coding: utf-8
-require 'factory_girl'
-require 'database_cleaner'
-
-DatabaseCleaner.strategy = :truncation
-
-# then, whenever you need to clean the DB
-DatabaseCleaner.clean
-
-FactoryGirl.create :fan
-
 temas = Tema.create([{ nombre: 'Televidente' },
                      { nombre: 'Abandonado' },
                      { nombre: 'Son Colegialas' },
