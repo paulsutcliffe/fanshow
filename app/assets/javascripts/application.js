@@ -21,15 +21,15 @@ checkboxes.change(function() {
   check_validate();
 });
 
-$(document).ready(function() {
-check_validate();
-
-});
+// $(document).ready(function() {
+// check_validate();
+// 
+// });
 
 
 function check_validate() {
 
-  
+  console.log('funct works');  
   checkboxes_checked = $(':checkbox:checked').length;
   max_check = 20;
   
