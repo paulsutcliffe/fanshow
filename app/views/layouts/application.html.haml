@@ -26,7 +26,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="/") Fanshow
+          //%a.brand(href="/") 
           .container.nav-collapse
             %ul.nav
               %li= link_to "Resultados", root_path
@@ -38,16 +38,24 @@
       .row-fluid
         .span3
           .well.sidebar-nav
+            = link_to image_tag('logo-rio.png'), '/'
+            = link_to image_tag('logo-fanshow.png'), '/'
             %ul.nav.nav-list
-              %li.nav-header INFORMACIÓN
-              %li= 'Faltan solo ' + (25 - Time.now.day).to_s + ' días'
-              - if params[:controller] == 'inicio'
-                %br
-                = link_to 'Votar', temas_path, class: 'btn btn-large btn-primary'
+              %li.nav-header
+                %h3.text-center.sidebar-title
+                  INFORMACIÓN
+              %li
+                .well.large-tex.large-text
+                  = 'Faltan solo ' + (25 - Time.now.day).to_s + ' días'
+                    - if params[:controller] == 'inicio'
+                
 
-        .span9
+        .span6
           = yield
+   
+        .span3
+          = link_to 'Votar', temas_path, class: 'btn btn-large btn-primary btn-extra-large'
 
       %footer
         %p &copy; RIO Producciones 2013
-    = render 'shared/google_analytics'
+    =# render 'shared/google_analytics'

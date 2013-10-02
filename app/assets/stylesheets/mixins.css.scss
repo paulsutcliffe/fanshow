@@ -1,0 +1,179 @@
+@import 'variables.css.scss';
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('fonts/bebasneue-webfont.eot');
+    src: url('fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bebasneue-webfont.woff') format('woff'),
+         url('fonts/bebasneue-webfont.ttf') format('truetype'),
+         url('fonts/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.bebas-neue {
+    font-family: 'bebas_neueregular'; letter-spacing: 1px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.title-parameters {
+  font-size: 30px;
+}
+
+.title-icon {
+  //content: $bg-title; position: relative; top: 15px; margin-right: 10px;
+}
+
+.main-paragraph {
+  font-size: 17px; font-family: $font-1; color: $white; line-height: 145%; text-align: justify;
+  padding-bottom: 15px; margin: 0;
+}
+
+.paragraph-small {
+  @extend .main-paragraph;
+  font-size: 15px;
+}
+
+.font-size-extreme {
+  font-size: 58px !important;
+}
+
+.contorno-default {
+  border: 5px solid $white;
+}
+
+.sombra-slider {
+  //content: $slider-shadow; position: absolute; bottom: -45px; left: -15px
+}
+
+@mixin full-width {
+  width: 100%; float: left; clear: left;
+}
+
+@mixin box-default {
+  background: $gray-light; border-radius: 5px;
+}
+
+@mixin social-box {
+  background: $gold; border-radius: 5px;
+}
+
+@mixin box-default-padding {
+  @include box-default;
+  padding: 15px 20px 0;
+}
+
+.miniblock {
+  h2.title {font-size: 17px;
+    &:before {content:""}
+  }
+
+
+  table, ul {
+    @include box-default; float: left;
+    margin: 5px 0 0; border-collapse: separate; padding: 5px 20px 5px 10px;
+    td, li {list-style: none; color: $white; font-family: $font-1; font-size: 16px; min-width: 100px; padding: 0;
+      a {color: $white}
+    }
+  }
+}
+
+
+// en evaluación
+@mixin display-false {
+  visibility: hidden; opacity: 0;
+}
+@mixin display-true {
+  visibility: visible; opacity: 1;
+}
+
+@mixin inline-block-left($separation) {
+  text-align: right;
+  li {margin-right: $separation}
+  li, a {@include inline-block}
+}
+
+@mixin inline-block-right($separation) {
+  text-align: right;
+  li {margin-left: $separation}
+  li, a {@include inline-block}
+}
+
+// core
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6 IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin full-width {
+  width: 100%; float: left; clear: left;
+}
+
+@mixin size($width, $height) {
+  width: $width; height: $height;
+}
+
+@mixin absolute($side-horizontal, $side-vertical, $coord-x, $coord-y) {
+  position: absolute;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+@mixin relative($side-vertical, $side-horizontal, $coord-y, $coord-x) {
+  position: relative;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; vertical-align: top;
+  float: none;
+}
+
+@mixin min-height($value) {
+  min-height: $value;
+  *height: auto !important;
+  height: $value;
+}
+
+@mixin box-sizing($value) {
+  -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
+  behavior: url(/assets/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc);
+
+  /* content-box
+    border-box */
+}
+
+@mixin clearfix2 {
+  content: "."; display: block; line-height: 0; clear: both; visibility: hidden; height: 0;
+  &:after {
+    *zoom: 1;
+  }
+}
+
+@mixin css3pie {
+  behavior: url(/assets/ie-support/PIE-1.0.0/PIE.htc);
+}
+
+// core css3 animations
+$easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+
+

@@ -1,0 +1,77 @@
+@import 'mixins.css.scss';
+@import 'bootstrap_and_overrides';
+
+body {background: $gray-dark; margin: 0; @extend .bebas-neue;}
+
+body h1, body h2, body h3, h4, h5, h6,
+li, label {@extend .bebas-neue; font-size: $bebas-min; color: $yellow}
+
+body h2 {font-size: $bebas-title}
+p {color: white}
+a {color: $yellow; @extend .bebas-neue; font-size: $bebas-min;
+  &:hover, &:focus {color: white; text-decoration: none}
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {color: white}
+
+.badge {background: $yellow; color: $black}
+
+.navbar,
+.navbar-inner {background: $gray-light; border: 0}
+
+.navbar .brand,
+.navbar .nav > li > a {text-shadow: none; color: $yellow}
+
+.well {background: transparent; border: 0}
+
+
+.btn {
+  &.btn-primary {background: $red; text-transform: uppercase; @extend .bebas-neue; font-size: $bebas-min;
+    &:hover, &:focus {background: darken($red, 10%)}
+    &.alt {background: orange; color: $black}
+  }
+  &.btn-extra-large {padding: 30px 0; width: 100%; font-size: 30px; line-height: 100%; background: $red;
+    &:hover, &:focus {background: darken($red, 10%)}
+  }
+}
+
+table {
+  tbody {
+    tr:hover > td, 
+    tr:hover > th {background: $gray-light;}
+
+  }
+
+}
+.sidebar-title {font-size: 30px; margin-bottom: 0}
+
+.table-hover tbody tr:hover > td, 
+.table-hover tbody tr:hover > th {background: $gray-light;}
+
+.nav-header {
+  h3 {color: $yellow; text-shadow: none}
+}
+.large-text {font-size: 34px; background: $red; color: white; line-height: 145%; text-align: center}
+
+form,
+.fake-form {background: $gray-light; margin-bottom: 30px; padding: 20px 30px;
+  position: relative;
+ .fields {width: 48%; @include inline-block}
+
+}
+
+.omni {text-align: right}
+.hide-label {opacity: 0; *filter: alpha(opacity=0); margin: 0}
+
+a {
+  &.face-log {
+    width: 200px; height: 40px; 
+    background: url(button-facebook-login-regular.png) no-repeat 0 0;
+    display: block;
+    &:hover {background: url(button-facebook-login-hover.png) no-repeat 0 0}
+  } 
+
+  
+}
+
+
