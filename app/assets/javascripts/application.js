@@ -21,15 +21,25 @@ checkboxes.change(function() {
   check_validate();
 });
 
+$(document).ready(function() {
+check_validate();
+
+});
+
+
 function check_validate() {
 
-
-  checkboxes_checked = $('[type="checkbox"]:checked');
-  max_check = 20;
+  checkboxes = $('[type="checkbox"]');
+  
+  checkboxes_checked = $('[type="checkbox"]:checked').length;
+  max_check = 4;
   
   if (checkboxes_checked == max_check) {
-    checkboxes.attr('disabled', 'disabled'); 
+    console.log(checkboxes_checked.length);
+    console.log('works');
+    $('[type="checkbox"]:not(:checked)').attr('disabled', 'disabled'); 
   } else {
+    console.log(checkboxes_checked.length);
     checkboxes.removeAttr('disabled');
   }
 }
