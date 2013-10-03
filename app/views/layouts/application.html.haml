@@ -31,15 +31,13 @@
             %ul.nav
               %li= link_to "Resultados", root_path
               %li= link_to "Votar", temas_path
-              %li= link_to "Mi selección de canciones", elegidas_fan_path(current_fan.id) if current_fan
-              %li= @remote_ip
 
     .container-fluid
 
       .row-fluid
         .span3
           .well.sidebar-nav
-            = link_to image_tag('logo-rio.png'), '/'
+            = link_to image_tag('logo-rio.png'), 'http://www.rio.com.pe'
             = link_to image_tag('logo-fanshow.png'), '/'
             %ul.nav.nav-list
               %li.nav-header

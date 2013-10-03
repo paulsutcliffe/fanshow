@@ -37,6 +37,8 @@ gem "capistrano"
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem "geocoder"
+
 gem "rvm-capistrano"
 gem "haml"
 gem "haml-rails"

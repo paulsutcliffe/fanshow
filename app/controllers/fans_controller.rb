@@ -1,13 +1,5 @@
 #coding: utf-8
 class FansController < InheritedResources::Base
-
-  def update
-    if params[:user][:password].blank?
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-    end
-  end
-
   def votar
     @fan = Fan.find(params[:id])
 
@@ -18,16 +10,16 @@ class FansController < InheritedResources::Base
         @fan.temas << Tema.find(tema_id)
       end
       flash[:notice] = 'Gracias por tu elección, nos vemos este 25 en el Sargento Pimiento Barranco.'
+      @fan.direccion_ip = request.ip
+      @fan.save
     end
 
-    @fan.ya_voto = 1
-    @fan.save
     redirect_to root_path
 
   end
 
   def elegidas
-    @fan = Fan.find(current_fan.id)
+    @fan = Fan.where("direccion_ip = ?", request.ip)
     @temas = @fan.temas
   end
 end

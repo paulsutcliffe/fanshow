@@ -79,6 +79,7 @@ GEM
     ffi (1.9.0)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
+    geocoder (1.1.8)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -240,6 +241,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
   friendly_id (~> 4.0.9)
+  geocoder
   haml
   haml-rails
   inherited_resources

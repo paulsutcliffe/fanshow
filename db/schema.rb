@@ -11,29 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001055051) do
+ActiveRecord::Schema.define(:version => 20131003170348) do
 
   create_table "fans", :force => true do |t|
-    t.boolean  "ya_voto",                :default => false
-    t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.string   "direccion_ip"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
-
-  add_index "fans", ["email"], :name => "index_fans_on_email", :unique => true
-  add_index "fans", ["reset_password_token"], :name => "index_fans_on_reset_password_token", :unique => true
 
   create_table "fans_temas", :id => false, :force => true do |t|
     t.integer "fan_id"

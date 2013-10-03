@@ -1,11 +1,14 @@
 class TemasController < InheritedResources::Base
-  before_filter :authenticate_fan!, :except => [:show]
-  before_filter :comprobar_que_ya_voto, :except => [:show]
+  before_filter :comprobar_que_ya_voto
 
   def comprobar_que_ya_voto
-    @fan = Fan.find(current_fan.id)
-    if @fan.ya_voto == true
-      redirect_to elegidas_fan_path(@fan)
+    @fan = Fan.where("direccion_ip = ?", request.ip).first
+    if @fan
+      if @fan.direccion_ip == request.ip
+        redirect_to root_path
+      end
+    else
+      @fan = Fan.create
     end
   end
 
