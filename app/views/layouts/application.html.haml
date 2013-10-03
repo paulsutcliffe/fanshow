@@ -26,12 +26,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          //%a.brand(href="/") 
+          //%a.brand(href="/")
           .container.nav-collapse
             %ul.nav
               %li= link_to "Resultados", root_path
               %li= link_to "Votar", temas_path
               %li= link_to "Mi selección de canciones", elegidas_fan_path(current_fan.id) if current_fan
+              %li= @remote_ip
 
     .container-fluid
 
@@ -48,11 +49,11 @@
                 .well.large-tex.large-text
                   = 'Faltan solo ' + (25 - Time.now.day).to_s + ' días'
                     - if params[:controller] == 'inicio'
-                
+
 
         = yield
-   
-        
+
+
 
       %footer
         %p &copy; RIO Producciones 2013
