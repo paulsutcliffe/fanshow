@@ -1,11 +1,11 @@
 .span6
   %h2 Ingresar
-  
-  .fake-form
-    .fields.omni
-      .field
-        = link_to '', fan_omniauth_authorize_path(:facebook), class: 'face-log'
-  
+
+  //.fake-form
+    //.fields.omni
+      //.field
+        //= link_to '', fan_omniauth_authorize_path(:facebook), class: 'face-log'
+
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .fields
       .field

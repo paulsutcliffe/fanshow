@@ -30,7 +30,7 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Resultados", root_path
-              //%li= link_to "Votar", temas_path
+              %li= link_to "Votar", temas_path
               %li= link_to "Mi selección de canciones", elegidas_fan_path(current_fan.id) if current_fan
 
     .container-fluid
