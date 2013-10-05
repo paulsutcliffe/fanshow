@@ -24,6 +24,9 @@ a, td {color: $yellow; @extend .bebas-neue; font-size: $bebas-min;
 
 .well {background: transparent; border: 0}
 
+.kosmyka {float: right;}
+.rioproducciones {float: left;}
+
 
 .btn {
   &.btn-primary {background: $red; text-transform: uppercase; @extend .bebas-neue; font-size: $bebas-min;
@@ -37,7 +40,7 @@ a, td {color: $yellow; @extend .bebas-neue; font-size: $bebas-min;
 
 table {
   tbody {
-    tr:hover > td, 
+    tr:hover > td,
     tr:hover > th {background: $gray-light;}
 
   }
@@ -45,7 +48,7 @@ table {
 }
 .sidebar-title {font-size: 30px; margin-bottom: 0}
 
-.table-hover tbody tr:hover > td, 
+.table-hover tbody tr:hover > td,
 .table-hover tbody tr:hover > th {background: $gray-light;}
 
 .nav-header {
@@ -65,13 +68,13 @@ form,
 
 a {
   &.face-log {
-    width: 200px; height: 40px; 
+    width: 200px; height: 40px;
     background: url(button-facebook-login-regular.png) no-repeat 0 0;
     display: block;
     &:hover {background: url(button-facebook-login-hover.png) no-repeat 0 0}
-  } 
+  }
 
-  
+
 }
 
 
